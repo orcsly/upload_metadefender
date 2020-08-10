@@ -1,0 +1,36 @@
+{% load static %}
+
+<html>
+<head>
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <h1><strong>Metadefender Upload Prototype</strong></h1>
+
+    <div class="form-group file-area">
+        <input type="file" name="files" id="files" required="required" multiple="multiple"/>
+        <div class="file-dummy">
+            <div class="success">You can add more files</div>
+            <div class="default">Please select some files</div>
+        </div>
+        <div class="file-errors">
+            {{ form.errors }}
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit">Upload images</button>
+    </div>
+
+</form>
+
+
+<link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+
+</body>
+</html>
